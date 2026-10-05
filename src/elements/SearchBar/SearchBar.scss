@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.search-container {
+  flex-shrink: 0;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: $bg-color;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  &.active {
+    max-height: 64px;
+  }
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: Poppins Regular;
+    }
+
+    .clear-search {
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,170 @@
+@use '../../styles/variables' as *;
+
+.campaign-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  .campaign-list {
+    list-style: none;
+    padding: 0;
+    max-height: 950px;
+    overflow: overlay;
+    scrollbar-gutter: auto both-edges;
+    &::-webkit-scrollbar {
+      display: block;
+      width: 8px;
+      position: absolute;
+      right: 0;
+    }
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-track-piece {
+      background-color: #00000000;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #00000040;
+      border: 1px solid #ffffff40;
+      border-radius: 24px;
+    }
+    .campaign-header {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #888;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e8e8e8;
+      margin-bottom: 4px;
+      padding: 0 10px; 
+      position: sticky;
+      top: 0;
+      background-color: #eae6e4;
+      z-index: 100;
+    }
+    .campaign-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12px 10px;
+      gap: 8px;
+      align-items: flex-start;
+      &:nth-of-type(2n) {
+        background-color: #d9d5d2;
+      }
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #efefef;
+      }
+      .campaign-name {
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        color: #1a1a1a;
+        line-height: 1.3;
+        max-width: 400px;
+      }
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 8px;
+        .experience-button {
+          background-color: #fff;
+          color: #444;
+          border: 1px solid #d4cfc9;
+          font-size: 14px;
+          padding: 4px 14px;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+          &:hover {
+            background-color: #f5f5f5;
+            border-color: #b8b3ac;
+          }
+          &.active {
+            background-color: $active-color;
+            border-color: $active-color;
+            color: #fff;
+          }
+        }
+      }
+      .campaign-conditions-container {
+        display: flex;
+        flex-direction: column;
+        .campaign-conditions-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 12px;
+          font-family: Poppins Bold;
+          color: $save-color;
+          background-color: rgba(73, 164, 168, 0.1);
+          border: 1.5px solid $save-color;
+          border-radius: 6px;
+          padding: 4px 10px;
+          cursor: pointer;
+          transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
+          .preview-icon {
+            width: 24px;
+            height: 24px;
+          }
+          &:hover {
+            background-color: $save-color;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(73, 164, 168, 0.35);
+          }
+        }
+      }
+    }
+  }
+  .qa-button-container {
+    width: 100%;
+    padding: 12px;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6px;
+    border-radius: 12px;
+    button {
+      width: 30%;
+      height: 50px;
+      min-height: 40px;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-family: Poppins Semibold;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s, box-shadow 0.15s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        opacity: 0.9;
+        box-shadow: $shadow;
+      }
+      &.qa-clear {
+        background-color: $clear-color;
+      }
+      &.qa-save {
+        background-color: $save-color;
+      }
+      &.qa-copy {
+        background-color: $copy-color;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

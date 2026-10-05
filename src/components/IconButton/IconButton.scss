@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.tl-qa-button {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  left: 20px;
+  bottom: 100px;
+  z-index: $z-panel;
+  border: none;
+  background-color: $bg-color;
+  padding: 10px;
+  touch-action: none;
+  border-radius: 100px;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transform: rotate(315deg);
+  transition: border-radius $transition;
+  &.active {
+    border-radius: 100px 25px 100px 100px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+  }
+}

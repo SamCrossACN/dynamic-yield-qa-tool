@@ -1,0 +1,48 @@
+@use './variables' as *;
+@use "../components/components";
+@use "../elements/elements";
+@use "../pages/pages";
+
+@keyframes loadingAnimation {
+  0% {
+    margin-left: -58%;
+  }
+  100% {
+    margin-left: 80%;
+  }
+}
+
+body {
+  &.condition-modal-open {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+code {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 0.85em !important;
+  font-weight: bold !important;
+  background-color: #f0f0f0 !important;
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
+  white-space: normal !important;
+  display: block;
+}
+@media screen and (max-width: 425px) {
+  .TL-QA-Container {
+    width: calc(100% - 40px);
+  }
+  li.campaign-item {
+    span.campaign-name {
+      font-size: 14px;
+    }
+    .button-container {
+      gap: 8px;
+      .experience-button {
+        font-size: 12px;
+        padding: 4px 10px;
+      }
+    }
+  }
+}

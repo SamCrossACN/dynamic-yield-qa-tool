@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+
+.tl-qa-container {
+  position: fixed;
+  left: 20px;
+  bottom: 200px;
+  z-index: $z-panel;
+  border: none;
+  border-radius: 12px;
+  background-color: $bg-color;
+  min-width: 500px;
+  max-width: 580px;
+  touch-action: none;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.18);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $transition;
+  display: flex;
+  flex-direction: column;
+  &.active {
+    max-height: calc(100vh - 220px);
+    height: 100%;
+  }
+  .widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px 10px;
+    flex-shrink: 0;
+
+    .widget-title {
+      font-family: Poppins Bold;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #1a1a1a;
+    }
+  }
+
+  .widget-disabled {
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+    padding: 24px 0;
+    margin: 0;
+  }
+  .settings-button {
+    height: 34px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 9999;
+    cursor: pointer;
+    svg {
+      height: 100%;
+    }
+  }
+  .screen-container {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+}

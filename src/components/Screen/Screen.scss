@@ -1,0 +1,16 @@
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eae6e4;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  .screen-body {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+}

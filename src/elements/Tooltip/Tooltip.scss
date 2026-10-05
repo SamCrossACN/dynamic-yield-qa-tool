@@ -1,0 +1,20 @@
+.tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tooltip-bubble {
+  position: fixed;
+  white-space: nowrap;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 11px;
+  font-family: Poppins Regular;
+  padding: 4px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 6px));
+  transition: opacity 0.1s ease;
+  z-index: 99999;
+}
